@@ -6,12 +6,12 @@
 #	      https://github.com/SonyaCore
 #
 
-PORT=80
+PORT=443
 UUID=$(cat /proc/sys/kernel/random/uuid)
 IP=$(hostname -I | cut -d' ' -f1)
 CONFIGNAME="config.json"
 CONFIGLOGLEVEL='info'
-WEBSOCKETPATH='/graphql'
+WEBSOCKETPATH='/67bvzV4dqAp9KlDrM6eX'
 DOCKERCOMPOSEVERSION='2.11.1'
 LINKNAME='v2ray'
 
@@ -71,7 +71,7 @@ cat > $CONFIGNAME <<CONFIG
           "connectionReuse": true,
           "path": "$WEBSOCKETPATH"
         },
-        "security": "none",
+        "security": "auto",
         "tcpSettings": {
           "header": {
             "type": "http",
@@ -174,4 +174,4 @@ echo ""
 echo "! After importing vmess link change the IP to your Internal Server IP"
 
 # Clean Up
-rm -rf deploy.sh
+# rm -rf deploy.sh
