@@ -6,7 +6,7 @@
 #	      https://github.com/SonyaCore
 #
 
-PORT=443
+PORT=$(shuf -i 49152-65535 -n 1)
 UUID=$(cat /proc/sys/kernel/random/uuid)
 IP=$(hostname -I | cut -d' ' -f1)
 CONFIGNAME="config.json"
